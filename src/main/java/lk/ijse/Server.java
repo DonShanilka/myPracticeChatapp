@@ -46,11 +46,13 @@ public class Server {
             String massage = "";
             String reply = "";
 
-            while(!massage.equals("finish")){
+            while (!massage.equals("exit")){
                 massage = dataInputStream.readUTF();
                 System.out.println("Client " + massage);
 
                 reply = bufferedReader.readLine();
+
+                dataOutputStream
 
             }
 
