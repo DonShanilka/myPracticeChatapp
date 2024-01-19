@@ -52,9 +52,15 @@ public class Server {
 
                 reply = bufferedReader.readLine();
 
-                dataOutputStream
+                dataOutputStream.writeUTF(reply);
+                dataOutputStream.flush();
 
             }
+
+            dataInputStream.close();
+            dataOutputStream.close();
+            bufferedReader.close();
+            socket.close();
 
 
         }catch (Exception e){
