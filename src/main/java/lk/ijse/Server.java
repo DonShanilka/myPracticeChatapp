@@ -40,27 +40,6 @@ public class Server {
             System.out.println("Accept");
 
             DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
-            DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-
-            String massage = "";
-            String reply = "";
-
-            while (!massage.equals("exit")){
-                massage = dataInputStream.readUTF();
-                System.out.println("Client " + massage);
-
-                reply = bufferedReader.readLine();
-
-                dataOutputStream.writeUTF(reply);
-                dataOutputStream.flush();
-
-            }
-
-            dataInputStream.close();
-            dataOutputStream.close();
-            bufferedReader.close();
-            socket.close();
 
 
         }catch (Exception e){
